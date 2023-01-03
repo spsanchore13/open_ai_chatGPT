@@ -86,7 +86,7 @@ const handleSubmit = async (e) => {
   // messageDiv.innerHTML = "..."
   loader(messageDiv)
 
-  const response = await fetch('https://chatgpt-mpne.onrender.com', {
+  const response = await fetch('https://chat-gpt-1vtj.onrender.com', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -102,7 +102,7 @@ const handleSubmit = async (e) => {
   if (response.ok) {
     const data = await response.json();
     const parsedData = data.bot.trim() // trims any trailing spaces/'\n' 
-
+    console.log(parsedData)
     typeText(messageDiv, parsedData)
   } else {
     const err = await response.text()
